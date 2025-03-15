@@ -21,11 +21,17 @@ class SiswaResource extends Resource
         return $form
             ->schema([
                 TextInput::make('NIS')
-                    ->required()
-                    ->maxLength(10),
+                    ->maxLength(12)
+                    ->numeric() // Pastikan hanya boleh angka
+                    ->extraAttributes(['maxlength' => 12]) // Laravel Validation Rule untuk batas karakter angka
+                    ->placeholder('Masukkan NIS (12 digit)')
+                    ->required(),
                 TextInput::make('NAMA')
+                   // ->rule('regex:/^[^\d]+$/') // Tidak boleh angka
                     ->required()
-                    ->maxLength(255),
+                    ->minLength(3)
+                    ->maxLength(50)
+                    ->placeholder('Masukkan nama lengkap'),
             ]);
     }
 
