@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\NilaiKuisTerjemahanAksaraKeLatinResource\Pages;
-use App\Filament\Resources\NilaiKuisTerjemahanAksaraKeLatinResource\RelationManagers;
-use App\Models\NilaiKuisTerjemahanAksaraKeLatin;
+use App\Filament\Resources\NilaiKuisMenulisAksaraNgalagenaResource\Pages;
+use App\Filament\Resources\NilaiKuisMenulisAksaraNgalagenaResource\RelationManagers;
+use App\Models\NilaiKuisMenulisAksaraNgalagena;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,12 +13,12 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class NilaiKuisTerjemahanAksaraKeLatinResource extends Resource
+class NilaiKuisMenulisAksaraNgalagenaResource extends Resource
 {
-    protected static ?string $model = NilaiKuisTerjemahanAksaraKeLatin::class;
-    protected static ?string $navigationLabel = 'Nilai Kuis Terjemahan Aksara ke Latin';
+    protected static ?string $model = NilaiKuisMenulisAksaraNgalagena::class;
+    protected static ?string $navigationLabel = 'Nilai Kuis Menulis Aksara Ngalagena';
     protected static ?string $navigationGroup = 'Nilai';
-    protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
+    protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
     public static function form(Form $form): Form
     {
@@ -26,16 +26,16 @@ class NilaiKuisTerjemahanAksaraKeLatinResource extends Resource
         ->schema([
             Forms\Components\Select::make('siswa_id')
                 ->label('Siswa')
-                ->relationship('siswa', 'NAMA') // Ambil nama siswa untuk ditampilkan
+                ->relationship('siswa', 'NAMA')
                 ->required()
                 ->searchable(),
 
-            Forms\Components\TextInput::make('Nilai')
+            Forms\Components\TextInput::make('nilai')
                 ->label('Nilai')
                 ->numeric()
                 ->required(),
 
-            Forms\Components\DatePicker::make('Tanggal')
+            Forms\Components\DatePicker::make('tanggal')
                 ->label('Tanggal')
                 ->required(),
         ]);
@@ -45,24 +45,24 @@ class NilaiKuisTerjemahanAksaraKeLatinResource extends Resource
     {
         return $table
         ->columns([
-            Tables\Columns\TextColumn::make('siswa.NIS') // Ambil NIS dari relasi
+            Tables\Columns\TextColumn::make('siswa.NIS')
                 ->label('NIS'),
 
-            Tables\Columns\TextColumn::make('siswa.NAMA') // Ambil Nama dari relasi
-                ->label('NAMA'),
+            Tables\Columns\TextColumn::make('siswa.NAMA')
+                ->label('Nama Siswa'),
 
-            Tables\Columns\TextColumn::make('Nilai')
+            Tables\Columns\TextColumn::make('nilai')
                 ->label('Nilai'),
 
-            Tables\Columns\TextColumn::make('Tanggal')
+            Tables\Columns\TextColumn::make('tanggal')
                 ->label('Tanggal'),
         ])
             ->filters([
                 //
             ])
             ->actions([
-                // Tables\Actions\EditAction::make(),
-                 Tables\Actions\DeleteAction::make(),
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -70,6 +70,7 @@ class NilaiKuisTerjemahanAksaraKeLatinResource extends Resource
                 ]),
             ]);
     }
+
 
     public static function getRelations(): array
     {
@@ -81,9 +82,9 @@ class NilaiKuisTerjemahanAksaraKeLatinResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListNilaiKuisTerjemahanAksaraKeLatins::route('/'),
-            'create' => Pages\CreateNilaiKuisTerjemahanAksaraKeLatin::route('/create'),
-            'edit' => Pages\EditNilaiKuisTerjemahanAksaraKeLatin::route('/{record}/edit'),
+            'index' => Pages\ListNilaiKuisMenulisAksaraNgalagenas::route('/'),
+            'create' => Pages\CreateNilaiKuisMenulisAksaraNgalagena::route('/create'),
+            'edit' => Pages\EditNilaiKuisMenulisAksaraNgalagena::route('/{record}/edit'),
         ];
     }
 }

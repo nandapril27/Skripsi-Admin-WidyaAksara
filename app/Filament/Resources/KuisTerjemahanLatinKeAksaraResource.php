@@ -22,8 +22,8 @@ class KuisTerjemahanLatinKeAksaraResource extends Resource
     protected static ?string $model = KuisTerjemahanLatinKeAksara::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?string $navigationLabel = 'Latin ke Aksara';
-    protected static ?string $navigationGroup = 'Kelola Kuis Terjemahan';
+    protected static ?string $navigationLabel = 'Terjemahan Latin ke Aksara';
+    protected static ?string $navigationGroup = 'Kelola Soal Kuis';
     public static function form(Form $form): Form
     {
         return $form

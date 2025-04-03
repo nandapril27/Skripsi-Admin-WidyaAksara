@@ -38,32 +38,39 @@ class NilaiKuisMenulisAksaraSwaraResource extends Resource
                     DatePicker::make('tanggal')
                         ->label('Tanggal')
                         ->required(),
-                        FileUpload::make('aksara_a')
+                    FileUpload::make('aksara_a')
                         ->label('Aksara A')
+                        ->disk('public')
                         ->image()
                         ->required(),
                     FileUpload::make('aksara_é')
                         ->label('Aksara É')
+                        ->disk('public')
                         ->image()
                         ->required(),
                     FileUpload::make('aksara_i')
                         ->label('Aksara I')
+                        ->disk('public')
                         ->image()
                         ->required(),
                     FileUpload::make('aksara_o')
                         ->label('Aksara O')
+                        ->disk('public')
                         ->image()
                         ->required(),
                     FileUpload::make('aksara_u')
                         ->label('Aksara U')
+                        ->disk('public')
                         ->image()
                         ->required(),
                     FileUpload::make('aksara_e')
                         ->label('Aksara E')
+                        ->disk('public')
                         ->image()
                         ->required(),
                     FileUpload::make('aksara_eu')
                         ->label('Aksara Eu')
+                        ->disk('public')
                         ->image()
                         ->required(),
                 ]);
@@ -82,20 +89,27 @@ class NilaiKuisMenulisAksaraSwaraResource extends Resource
             TextColumn::make('tanggal')
                 ->label('Tanggal')
                 ->sortable(),
-                ImageColumn::make('aksara_a')
-                ->label('Aksara A'),
+            ImageColumn::make('aksara_a')
+                ->label('Aksara A')
+                ->disk('public'),
             ImageColumn::make('aksara_é')
-                ->label('Aksara É'),
+                ->label('Aksara É')
+                ->disk('public'),
             ImageColumn::make('aksara_i')
-                ->label('Aksara I'),
+                ->label('Aksara I')
+                ->disk('public'),
             ImageColumn::make('aksara_o')
-                ->label('Aksara O'),
+                ->label('Aksara O')
+                ->disk('public'),
             ImageColumn::make('aksara_u')
-                ->label('Aksara U'),
+                ->label('Aksara U')
+                ->disk('public'),
             ImageColumn::make('aksara_e')
-                ->label('Aksara E'),
+                ->label('Aksara E')
+                ->disk('public'),
             ImageColumn::make('aksara_eu')
-                ->label('Aksara Eu'),
+                ->label('Aksara Eu')
+                ->disk('public'),
             ])
             ->filters([
                 //

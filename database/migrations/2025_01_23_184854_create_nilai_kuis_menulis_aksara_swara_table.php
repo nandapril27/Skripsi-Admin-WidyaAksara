@@ -36,3 +36,4 @@ return new class extends Migration
         Schema::dropIfExists('nilai_kuis_menulis_aksara_swara');
     }
 };
+

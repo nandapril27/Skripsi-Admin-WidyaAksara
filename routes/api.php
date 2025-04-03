@@ -9,6 +9,9 @@ use App\Http\Controllers\api\NilaiKuisTerjemahanAksaraKeLatinController;
 use App\Http\Controllers\api\NilaiKuisTerjemahanLatinKeAksaraController;
 use App\Http\Controllers\api\AksaraSwaraController;
 use App\Http\Controllers\api\AksaraNgalagenaController;
+use App\Http\Controllers\api\NilaiKuisMenulisAksaraSwaraController;
+use App\Http\Controllers\api\NilaiKuisMenulisAksaraNgalagenaController;
+
 
 //Untuk Login
 Route::post('/login', [SiswaController::class, 'login']);
@@ -37,3 +40,19 @@ Route::get('/aksara-swara', [AksaraSwaraController::class, 'index']);
 
 //Untuk Menampilkan Aksara Ngalagena
 Route::get('/aksara-ngalagena', [AksaraNgalagenaController::class, 'index']);
+
+//Untuk Nilai Kuis Menulis Aksara Swara
+// Route::prefix('nilai-kuis-menulis-aksara-swara')->group(function () {
+//     Route::get('/', [NilaiKuisMenulisAksaraSwaraController::class, 'index']); // Get all data
+//     Route::post('/', [NilaiKuisMenulisAksaraSwaraController::class, 'store']); // Create new record
+//     Route::get('/{id}', [NilaiKuisMenulisAksaraSwaraController::class, 'show']); // Get single record
+//     Route::put('/{id}', [NilaiKuisMenulisAksaraSwaraController::class, 'update']); // Update record
+//     Route::delete('/{id}', [NilaiKuisMenulisAksaraSwaraController::class, 'destroy']); // Delete record
+// });
+
+Route::get('/nilai-kuis-menulis-aksara-swara', [NilaiKuisMenulisAksaraSwaraController::class, 'index']);
+
+
+//Untuk Nilai Kuis Menulis Aksara Ngalagena
+Route::post('/nilai-menulis-ngalagena', [NilaiKuisMenulisAksaraNgalagenaController::class, 'store']);
+Route::get('/nilai-menulis-ngalagena/{NIS}', [NilaiKuisMenulisAksaraNgalagenaController::class, 'show']);

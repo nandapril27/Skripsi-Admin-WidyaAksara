@@ -22,7 +22,7 @@ class AksaraNgalagenaResource extends Resource
     protected static ?string $model = AksaraNgalagena::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationLabel = 'Aksara Ngalagena';
-    protected static ?string $navigationGroup = 'Kelola Materi Aksara';
+    protected static ?string $navigationGroup = 'Kelola Materi';
    
     public static function form(Form $form): Form
     {

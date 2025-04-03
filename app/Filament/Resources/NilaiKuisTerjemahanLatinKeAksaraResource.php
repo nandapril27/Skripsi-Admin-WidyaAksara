@@ -16,8 +16,8 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 class NilaiKuisTerjemahanLatinKeAksaraResource extends Resource
 {
     protected static ?string $model = NilaiKuisTerjemahanLatinKeAksara::class;
-    protected static ?string $navigationLabel = 'Latin ke Aksara';
-    protected static ?string $navigationGroup = 'Kelola Nilai Kuis Terjemahan';
+    protected static ?string $navigationLabel = 'Nilai Kuis Terjemahan Latin Ke Aksara';
+    protected static ?string $navigationGroup = 'Nilai';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
 
     public static function form(Form $form): Form
@@ -61,7 +61,7 @@ class NilaiKuisTerjemahanLatinKeAksaraResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                // Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([

@@ -22,7 +22,7 @@ class AksaraSwaraResource extends Resource
     protected static ?string $model = AksaraSwara::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
     protected static ?string $navigationLabel = 'Aksara Swara';
-    protected static ?string $navigationGroup = 'Kelola Materi Aksara';
+    protected static ?string $navigationGroup = 'Kelola Materi';
     
     public static function form(Form $form): Form
     {

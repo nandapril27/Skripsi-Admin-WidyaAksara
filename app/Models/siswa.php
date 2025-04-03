@@ -15,7 +15,7 @@ class siswa extends Model
     protected $fillable = [
         'NIS',
         'NAMA',
-        // Tambahkan atribut lain sesuai tabel siswa
+       
     ];
 
     
@@ -35,6 +35,11 @@ class siswa extends Model
         return $this->hasMany(NilaiKuisMenulisAksaraSwara::class, 'id');
     }
     
+    public function nilaiKuisMenulisAksaraNgalagena()
+    {
+        return $this->hasMany(NilaiKuisMenulisAksaraNgalagena::class, 'id');
+    }
+
     public function nilaiKuisMenulisAksaraNgalagena1()
     {
         return $this->hasMany(NilaiKuisMenulisAksaraNgalagena1::class, 'id');
