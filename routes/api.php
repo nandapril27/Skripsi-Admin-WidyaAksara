@@ -42,6 +42,9 @@ Route::get('/aksara-swara', [AksaraSwaraController::class, 'index']);
 Route::get('/aksara-ngalagena', [AksaraNgalagenaController::class, 'index']);
 
 //Untuk Nilai Kuis Menulis Aksara Swara
+Route::post('/nilai-menulis-swara', [NilaiKuisMenulisAksaraSwaraController::class, 'store']);
+Route::get('/nilai-menulis-swara/{NIS}', [NilaiKuisMenulisAksaraSwaraController::class, 'show']);
+
 // Route::prefix('nilai-kuis-menulis-aksara-swara')->group(function () {
 //     Route::get('/', [NilaiKuisMenulisAksaraSwaraController::class, 'index']); // Get all data
 //     Route::post('/', [NilaiKuisMenulisAksaraSwaraController::class, 'store']); // Create new record
@@ -50,7 +53,7 @@ Route::get('/aksara-ngalagena', [AksaraNgalagenaController::class, 'index']);
 //     Route::delete('/{id}', [NilaiKuisMenulisAksaraSwaraController::class, 'destroy']); // Delete record
 // });
 
-Route::get('/nilai-kuis-menulis-aksara-swara', [NilaiKuisMenulisAksaraSwaraController::class, 'index']);
+//Route::get('/nilai-kuis-menulis-aksara-swara', [NilaiKuisMenulisAksaraSwaraController::class, 'index']);
 
 
 //Untuk Nilai Kuis Menulis Aksara Ngalagena

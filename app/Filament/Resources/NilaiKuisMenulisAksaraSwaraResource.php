@@ -22,95 +22,47 @@ use Filament\Tables\Columns\ImageColumn;
 class NilaiKuisMenulisAksaraSwaraResource extends Resource
 {
     protected static ?string $model = NilaiKuisMenulisAksaraSwara::class;
-    protected static ?string $navigationLabel = 'Aksara Swara';
-    protected static ?string $navigationGroup = 'Kelola Nilai Kuis Menulis';
+    protected static ?string $navigationLabel = 'Nilai Kuis Menulis Aksara Swara';
+    protected static ?string $navigationGroup = 'History Nilai';
     protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                    Select::make('siswa_id')
-                        ->label('Nama Siswa')
-                        ->relationship('siswa', 'NAMA')
-                        ->searchable()
-                        ->required(),
-                    DatePicker::make('tanggal')
-                        ->label('Tanggal')
-                        ->required(),
-                    FileUpload::make('aksara_a')
-                        ->label('Aksara A')
-                        ->disk('public')
-                        ->image()
-                        ->required(),
-                    FileUpload::make('aksara_é')
-                        ->label('Aksara É')
-                        ->disk('public')
-                        ->image()
-                        ->required(),
-                    FileUpload::make('aksara_i')
-                        ->label('Aksara I')
-                        ->disk('public')
-                        ->image()
-                        ->required(),
-                    FileUpload::make('aksara_o')
-                        ->label('Aksara O')
-                        ->disk('public')
-                        ->image()
-                        ->required(),
-                    FileUpload::make('aksara_u')
-                        ->label('Aksara U')
-                        ->disk('public')
-                        ->image()
-                        ->required(),
-                    FileUpload::make('aksara_e')
-                        ->label('Aksara E')
-                        ->disk('public')
-                        ->image()
-                        ->required(),
-                    FileUpload::make('aksara_eu')
-                        ->label('Aksara Eu')
-                        ->disk('public')
-                        ->image()
-                        ->required(),
-                ]);
+        ->schema([
+            Forms\Components\Select::make('siswa_id')
+                ->label('Siswa')
+                ->relationship('siswa', 'NAMA')
+                ->required()
+                ->searchable(),
+
+            Forms\Components\TextInput::make('nilai')
+                ->label('Nilai')
+                ->numeric()
+                ->required(),
+
+            Forms\Components\DatePicker::make('tanggal')
+                ->label('Tanggal')
+                ->required(),
+        ]);
     }
 
     public static function table(Table $table): Table
     {
         return $table
         ->columns([
-            TextColumn::make('siswa.NAMA')
-                ->label('Nama Siswa')
-                ->sortable()
-                ->searchable(),
-            TextColumn::make('siswa.NIS')
+            Tables\Columns\TextColumn::make('siswa.NIS')
                 ->label('NIS'),
-            TextColumn::make('tanggal')
-                ->label('Tanggal')
-                ->sortable(),
-            ImageColumn::make('aksara_a')
-                ->label('Aksara A')
-                ->disk('public'),
-            ImageColumn::make('aksara_é')
-                ->label('Aksara É')
-                ->disk('public'),
-            ImageColumn::make('aksara_i')
-                ->label('Aksara I')
-                ->disk('public'),
-            ImageColumn::make('aksara_o')
-                ->label('Aksara O')
-                ->disk('public'),
-            ImageColumn::make('aksara_u')
-                ->label('Aksara U')
-                ->disk('public'),
-            ImageColumn::make('aksara_e')
-                ->label('Aksara E')
-                ->disk('public'),
-            ImageColumn::make('aksara_eu')
-                ->label('Aksara Eu')
-                ->disk('public'),
-            ])
+
+            Tables\Columns\TextColumn::make('siswa.NAMA')
+                ->label('Nama Siswa'),
+
+            Tables\Columns\TextColumn::make('nilai')
+                ->label('Nilai'),
+
+            Tables\Columns\TextColumn::make('tanggal')
+                ->label('Tanggal'),
+        ])
             ->filters([
                 //
             ])

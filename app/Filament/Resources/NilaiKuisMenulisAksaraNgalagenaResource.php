@@ -17,7 +17,7 @@ class NilaiKuisMenulisAksaraNgalagenaResource extends Resource
 {
     protected static ?string $model = NilaiKuisMenulisAksaraNgalagena::class;
     protected static ?string $navigationLabel = 'Nilai Kuis Menulis Aksara Ngalagena';
-    protected static ?string $navigationGroup = 'Nilai';
+    protected static ?string $navigationGroup = 'History Nilai';
     protected static ?string $navigationIcon = 'heroicon-o-pencil-square';
 
     public static function form(Form $form): Form

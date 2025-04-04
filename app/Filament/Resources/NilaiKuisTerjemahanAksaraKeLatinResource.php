@@ -17,7 +17,7 @@ class NilaiKuisTerjemahanAksaraKeLatinResource extends Resource
 {
     protected static ?string $model = NilaiKuisTerjemahanAksaraKeLatin::class;
     protected static ?string $navigationLabel = 'Nilai Kuis Terjemahan Aksara ke Latin';
-    protected static ?string $navigationGroup = 'Nilai';
+    protected static ?string $navigationGroup = 'History Nilai';
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-check';
 
     public static function form(Form $form): Form
