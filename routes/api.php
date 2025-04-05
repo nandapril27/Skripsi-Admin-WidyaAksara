@@ -11,6 +11,8 @@ use App\Http\Controllers\api\AksaraSwaraController;
 use App\Http\Controllers\api\AksaraNgalagenaController;
 use App\Http\Controllers\api\NilaiKuisMenulisAksaraSwaraController;
 use App\Http\Controllers\api\NilaiKuisMenulisAksaraNgalagenaController;
+use App\Http\Controllers\api\MenulisAksaraSwaraController;
+use App\Http\Controllers\api\MenulisAksaraNgalagenaController;
 
 
 //Untuk Login
@@ -18,6 +20,12 @@ Route::post('/login', [SiswaController::class, 'login']);
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
+//Untuk Kuis Menulis Aksara Swara
+Route::get('/menulis-aksara-swara', [MenulisAksaraSwaraController::class, 'index']);
+
+//Untuk Kuis Menulis Aksara Ngalagena
+Route::get('/menulis-aksara-ngalagena', [MenulisAksaraNgalagenaController::class, 'index']);
 
 //Untuk Kuis Terjemahan Aksara Ke Latin
 Route::get('/quiz', [KuisTerjemahanAksaraKeLatinController::class, 'getQuestions']);
