@@ -5,7 +5,7 @@ namespace App\Http\Controllers\api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\NilaiKuisTerjemahanLatinKeAksara;
-use App\Models\Siswa;
+use App\Models\siswa;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Carbon\Carbon;
@@ -25,7 +25,7 @@ class NilaiKuisTerjemahanLatinKeAksaraController extends Controller
             ]);
 
             // Cari siswa berdasarkan NIS
-            $siswa = Siswa::where('NIS', $validated['NIS'])->first();
+            $siswa = siswa::where('NIS', $validated['NIS'])->first();
 
             if (!$siswa) {
                 return response()->json([
@@ -64,7 +64,7 @@ class NilaiKuisTerjemahanLatinKeAksaraController extends Controller
     public function show($NIS)
     {
         // Cari siswa berdasarkan NIS
-        $siswa = Siswa::where('NIS', $NIS)->first();
+        $siswa = siswa::where('NIS', $NIS)->first();
     
         if (!$siswa) {
             return response()->json([

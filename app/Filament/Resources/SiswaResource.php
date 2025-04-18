@@ -7,12 +7,12 @@ use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
-use App\Models\Siswa;
+use App\Models\siswa;
 use App\Filament\Resources\SiswaResource\Pages;
 
 class SiswaResource extends Resource
 {
-    protected static ?string $model = Siswa::class;
+    protected static ?string $model = siswa::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
     protected static ?string $navigationLabel = 'Kelola Data Siswa';

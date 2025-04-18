@@ -62,7 +62,7 @@ class NilaiKuisTerjemahanAksaraKeLatinResource extends Resource
             ])
             ->actions([
                 // Tables\Actions\EditAction::make(),
-                 Tables\Actions\DeleteAction::make(),
+                //  Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -86,4 +86,10 @@ class NilaiKuisTerjemahanAksaraKeLatinResource extends Resource
             'edit' => Pages\EditNilaiKuisTerjemahanAksaraKeLatin::route('/{record}/edit'),
         ];
     }
+    
+    public static function canCreate(): bool
+{
+    return false;
+}
+
 }

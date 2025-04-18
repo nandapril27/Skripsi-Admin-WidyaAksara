@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\api\SiswaController;
+use App\Http\Controllers\api\siswaController;
 use App\Http\Controllers\api\KuisTerjemahanAksaraKeLatinController;
 use App\Http\Controllers\api\KuisTerjemahanLatinKeAksaraController;
 use App\Http\Controllers\api\NilaiKuisTerjemahanAksaraKeLatinController;
@@ -16,7 +16,7 @@ use App\Http\Controllers\api\MenulisAksaraNgalagenaController;
 
 
 //Untuk Login
-Route::post('/login', [SiswaController::class, 'login']);
+Route::post('/login', [siswaController::class, 'login']);
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');

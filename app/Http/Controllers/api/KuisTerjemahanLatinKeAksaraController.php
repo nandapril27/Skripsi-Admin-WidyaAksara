@@ -4,7 +4,7 @@ namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\KuisTerjemahanLatinKeAksara; // Pastikan nama model benar
+use App\Models\KuisTerjemahanLatinKeAksara; 
 
 class KuisTerjemahanLatinKeAksaraController extends Controller
 {

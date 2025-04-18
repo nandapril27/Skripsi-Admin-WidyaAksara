@@ -61,8 +61,8 @@ class NilaiKuisMenulisAksaraNgalagenaResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                // Tables\Actions\EditAction::make(),
+                // Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -87,4 +87,10 @@ class NilaiKuisMenulisAksaraNgalagenaResource extends Resource
             'edit' => Pages\EditNilaiKuisMenulisAksaraNgalagena::route('/{record}/edit'),
         ];
     }
+
+    public static function canCreate(): bool
+{
+    return false;
+}
+
 }
